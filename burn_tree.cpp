@@ -190,3 +190,5 @@ int main()
 }
 
 // } Driver Code Ends
+// Why Not Separate Checks?
+// If you check and process each node separately (without the for loop), you'd end up incrementing the time for every node you process, regardless of whether it's at the same level or not. This would incorrectly count time units for each node instead of for each level, leading to an overestimation of the time required.
