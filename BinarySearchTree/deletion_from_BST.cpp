@@ -89,12 +89,24 @@ void takeInput(Node *&root)
         cin >> data;
     }
 }
+bool validateBST(Node*root) {
+  if(!root->right && !root->left)return true;
+  cout<<root->data;
+  bool op1,op2;
+  if (root->left) {
+      op1=root->left->data<=root->data && validateBST(root->left);
+  }
+  if(root->right){
+      op2=root->right->data>=root->data && validateBST(root->right);
+  }
+  return op1&&op2;
+}
 int main()
 {
     Node *root = NULL;
     takeInput(root);
-    deleteBST(root,6);
-    
+    cout<<validateBST(root);
+
     
     
 }
