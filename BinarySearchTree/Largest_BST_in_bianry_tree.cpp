@@ -29,6 +29,7 @@ Info solve(TreeNode*root, int&ans){
     Info right=solve(root->right, ans);
     Info currNode;
     currNode.size=left.size+right.size+1;
+    
     currNode.mini=min(root->data,left.mini);
     currNode.maxi=max(root->data,right.maxi);
     if(left.isBst && right.isBst &&(root->data>left.maxi && root->data<right.mini)){
