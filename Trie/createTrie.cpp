@@ -21,12 +21,16 @@ class Trie
 {
 public:
     TrieNode *root;
+    Trie(){
+        root=new TrieNode('\0');
+    }
     void insertUtil(TrieNode *node, string word)
     {
         // base case
         if (word.length() == 0)
         {
             root->isTerminal = true;
+            return;
         }
         // asuming word will be in caps
         int index = word[0] - 'A';
@@ -49,6 +53,8 @@ public:
         insertUtil(root, word);
     }
 };
-int main()
-{
+int main(){
+    Trie*T=new Trie();
+    T->insertWord("abcd");
+
 }
